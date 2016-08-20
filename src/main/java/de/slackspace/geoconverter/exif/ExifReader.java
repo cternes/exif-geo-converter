@@ -1,4 +1,4 @@
-package de.slackspace.geoconverter;
+package de.slackspace.geoconverter.exif;
 
 import com.drew.metadata.Metadata;
 import com.drew.metadata.MetadataException;
