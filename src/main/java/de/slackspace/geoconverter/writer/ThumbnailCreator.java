@@ -14,7 +14,7 @@ public class ThumbnailCreator {
     private static final String JPG = "jpg";
 
     public List<Photo> createThumbnails(List<Photo> photos, String targetDirectory) {
-        for (Photo photo : photos) {
+        photos.parallelStream().forEach(photo -> {
             try {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
@@ -28,7 +28,7 @@ public class ThumbnailCreator {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+        });
 
         return photos;
     }
