@@ -10,7 +10,7 @@ import net.coobird.thumbnailator.geometry.Positions;
 
 public class ThumbnailCreator {
 
-    private static final int THUMBNAIL_SIZE = 125;
+    private static final int THUMBNAIL_SIZE = 100;
     private static final String JPG = "jpg";
 
     public List<Photo> createThumbnails(List<Photo> photos, String targetDirectory) {
