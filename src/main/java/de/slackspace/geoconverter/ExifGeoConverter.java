@@ -24,6 +24,11 @@ public class ExifGeoConverter {
     private static final String JSON_OUTPUT_FILE = "geocoordinates.json";
 
     public static void main(String[] args) throws ImageProcessingException, IOException, MetadataException {
+        if(args.length == 0) {
+            printUsage();
+            System.exit(-1);
+        }
+
         String sourceDirectory = args[0];
         Path outputPath = getOutputPath(sourceDirectory);
 
@@ -35,6 +40,11 @@ public class ExifGeoConverter {
 
         writeThumbnails(outputPath, photos);
         writeJson(outputPath, photos);
+    }
+
+    private static void printUsage() {
+        System.out.println("No arguments provided!");
+        System.out.println("Usage exif-geo-converter.jar <imageDirectory>");
     }
 
     private static void writeThumbnails(Path outputPath, List<Photo> photos) {
