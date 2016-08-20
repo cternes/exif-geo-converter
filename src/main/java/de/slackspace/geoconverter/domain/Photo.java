@@ -6,8 +6,11 @@ import com.drew.lang.GeoLocation;
 
 public class Photo {
 
+    private static final String THUMB_PREFIX = "thumb_";
+
     private Path sourcePath;
     private GeoLocation geoLocation;
+    private byte[] thumbnail;
 
     public Photo(Path path) {
         sourcePath = path;
@@ -23,6 +26,18 @@ public class Photo {
 
     public GeoLocation getGeoLocation() {
         return geoLocation;
+    }
+
+    public void setThumbnail(byte[] bytes) {
+        this.thumbnail = bytes;
+    }
+
+    public byte[] getThumbnail() {
+        return thumbnail;
+    }
+
+    public String getThumbnailName() {
+        return  THUMB_PREFIX + getSourcePath().getFileName().toString();
     }
 
 }

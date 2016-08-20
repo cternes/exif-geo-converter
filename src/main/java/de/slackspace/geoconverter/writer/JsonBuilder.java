@@ -23,7 +23,7 @@ public class JsonBuilder {
                 sb.append(",");
             }
 
-            String path = entry.getSourcePath().getFileName().toString();
+            String path = entry.getThumbnailName();
             double latitude = entry.getGeoLocation().getLatitude();
             double longitude = entry.getGeoLocation().getLongitude();
 
